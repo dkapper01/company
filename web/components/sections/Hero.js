@@ -12,18 +12,19 @@ function urlFor (source) {
 
 function Hero (props) {
   const {heading, backgroundImage, tagline, ctas} = props
+  console.log(backgroundImage)
 
-  const style = backgroundImage
+  const style = backgroundImage.asset
     ? {
       backgroundImage: `url("${urlFor(backgroundImage)
         .width(2000)
         .auto('format')
         .url()}")`
     }
-    : {}
+    : {backgroundImage: ` linear-gradient(to bottom right, #3f51b5, #1a237e)`}
 
   return (
-    <div className={styles.root} >
+    <div className={styles.root} style={style}>
       <div className={styles.content}>
         <h1 className={styles.title}>{heading}</h1>
         <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>

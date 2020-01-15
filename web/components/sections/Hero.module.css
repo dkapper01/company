@@ -4,8 +4,7 @@
 .root {
   composes: center from "../../styles/shared.module.css";
   position: relative;
-  /* background-color: var(--color-black, #000); */
-  background-image: linear-gradient(to bottom right, #3f51b5, #1a237e);
+  background-color: var(--color-black, #000);
   color: var(--color-white, #fff);
   background-size: cover;
   background-repeat: no-repeat;
@@ -23,8 +22,6 @@
   top: 50%;
   left: 0;
   /* background-image: linear-gradient(#2220, #222e); */
-  /* background-image: linear-gradient(to bottom right, #3f51b5, #1a237e); */
-
   width: 100%;
   height: 50%;
   z-index: 0;
