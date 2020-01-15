@@ -23,7 +23,7 @@ function Hero (props) {
     : {}
 
   return (
-    <div className={styles.root} style={style}>
+    <div className={styles.root} >
       <div className={styles.content}>
         <h1 className={styles.title}>{heading}</h1>
         <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
