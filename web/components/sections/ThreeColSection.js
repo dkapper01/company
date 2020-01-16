@@ -12,22 +12,25 @@ const ThreeColSection = props => {
     shortDescriptionTwo,
     shortDescriptionThree
   } = props
-  return <div>
-    <h2>{heading && heading}</h2>
+  return (
     <div>
-      {titleOne}
-      <SimpleBlockContent blocks={shortDescriptionOne} />
+      <h2>{heading && heading}</h2>
+      <ul>
+        <li>
+          {titleOne}
+          <SimpleBlockContent blocks={shortDescriptionOne} />
+        </li>
+        <li>
+          {titleTwo}
+          <SimpleBlockContent blocks={shortDescriptionTwo} />
+        </li>
+        <li>
+          {titleThree}
+          <SimpleBlockContent blocks={shortDescriptionThree} />
+        </li>
+      </ul>
     </div>
-    <div>
-      {titleTwo}
-      <SimpleBlockContent blocks={shortDescriptionTwo} />
-    </div>
-    <div>
-      {titleThree}
-      <SimpleBlockContent blocks={shortDescriptionThree} />
-
-    </div>
-  </div>
+  )
 }
 
 ThreeColSection.propTypes = {
