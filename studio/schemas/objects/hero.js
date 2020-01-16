@@ -4,6 +4,11 @@ export default {
   title: 'Hero',
   fields: [
     {
+      name: 'smallText',
+      type: 'string',
+      title: 'Small Text'
+    },
+    {
       name: 'heading',
       type: 'string',
       title: 'Heading'
