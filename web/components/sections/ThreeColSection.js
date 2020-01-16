@@ -12,9 +12,8 @@ const ThreeColSection = props => {
     shortDescriptionTwo,
     shortDescriptionThree
   } = props
-  console.log(props)
   return <div>
-    <h2>{heading}</h2>
+    <h2>{heading && heading}</h2>
     <div>
       {titleOne}
       <SimpleBlockContent blocks={shortDescriptionOne} />
