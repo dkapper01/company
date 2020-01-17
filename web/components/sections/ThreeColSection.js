@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SimpleBlockContent from '../SimpleBlockContent'
+import styles from '../modules/ThreeColSection.module.css'
+import {IoMdCheckmark} from 'react-icons/io'
 
 const ThreeColSection = props => {
   const {
@@ -13,22 +15,28 @@ const ThreeColSection = props => {
     shortDescriptionThree
   } = props
   return (
-    <div>
-      <h2>{heading && heading}</h2>
-      <ul>
-        <li>
-          {titleOne}
-          <SimpleBlockContent blocks={shortDescriptionOne} />
-        </li>
-        <li>
-          {titleTwo}
-          <SimpleBlockContent blocks={shortDescriptionTwo} />
-        </li>
-        <li>
-          {titleThree}
-          <SimpleBlockContent blocks={shortDescriptionThree} />
-        </li>
-      </ul>
+    <div className={styles.root}>
+      <div className={styles.content}>
+        <h2>{heading && heading}</h2>
+        <div className={styles.wrapper}>
+
+          <div className={styles.item}>
+            <IoMdCheckmark />
+            <h3 className={styles.title}>{titleOne}</h3>
+            {shortDescriptionOne && <div className={styles.text}><SimpleBlockContent blocks={shortDescriptionOne} /> </div>}
+          </div>
+          <div className={styles.item}>
+            <h3 className={styles.title}>{titleTwo}</h3>
+            {shortDescriptionTwo && <div className={styles.text}><SimpleBlockContent blocks={shortDescriptionTwo} /> </div>}
+
+          </div>
+          <div className={styles.item}>
+            <h3 className={styles.title}>{titleThree}</h3>
+            {shortDescriptionThree && <div className={styles.text}><SimpleBlockContent blocks={shortDescriptionThree} /> </div>}
+
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

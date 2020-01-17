@@ -1,3 +1,43 @@
 @import "../../styles/custom-media.css";
 @import "../../styles/custom-properties.css";
 
+.root {
+  padding: 2rem 0;
+  @media (--media-min-large) {
+    padding: 4rem 0;
+  }
+}
+.title {
+  color: var(--color-dark-gray);
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+  margin-bottom: 0;
+}
+.text {
+  @nest & p {
+    margin: 5px 0;
+    color: var(--color-gray);
+    font-size: var(--font-large-size);
+  }
+}
+.wrapper {
+  display: grid;
+  /* grid-template-columns: repeat(minmax(300px), 1fr); */
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-gap: 3rem;
+
+  /* grid-template-rows: 1fr; */
+  /* grid-template-areas: ". . ."; */
+}
+.item {
+}
+.content {
+  position: relative;
+  margin: 0 1.5rem;
+  max-width: var(--width-large);
+
+  @media (--media-min-medium) {
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+}
