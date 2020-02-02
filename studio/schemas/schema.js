@@ -9,6 +9,7 @@ import page from './documents/page'
 import route from './documents/route'
 import siteConfig from './documents/siteConfig'
 import item from './documents/item'
+import logo from './documents/logo'
 
 // Object types
 import cta from './objects/cta'
@@ -19,6 +20,7 @@ import link from './objects/link'
 import portableText from './objects/portableText'
 import simplePortableText from './objects/simplePortableText'
 import threeColSection from './objects/threeColSection'
+import logoSection from './objects/logoSection'
 
 // Landing page sections
 import hero from './objects/hero'
@@ -47,6 +49,8 @@ export default createSchema({
     siteConfig,
     textSection,
     threeColSection,
-    item
+    item,
+    logoSection,
+    logo
   ])
 })

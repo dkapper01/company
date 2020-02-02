@@ -1,0 +1,24 @@
+@import "../../styles/custom-media.css";
+@import "../../styles/custom-properties.css";
+
+.heading {
+  text-align: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.logoWrapper {
+  display: flex;  
+  max-width: var(--width-large);
+  margin: 0 auto; 
+  justify-content: center;
+}
+
+.logo {
+  width: 200px;
+  display: inline;
+  /* filter: grayscale(100%); */
+
+}

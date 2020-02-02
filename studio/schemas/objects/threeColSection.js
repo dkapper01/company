@@ -43,7 +43,7 @@ export default {
     select: {
       title: 'titleOne'
     },
-    prepare({ title }) {
+    prepare ({title}) {
       return {
         title,
         subtitle: 'Three column section'

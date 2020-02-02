@@ -10,7 +10,6 @@ const builder = imageUrlBuilder(client)
 
 function ImageSection (props) {
   const {heading, label, text, image, cta} = props
-
   if (!image) {
     return null
   }
@@ -18,6 +17,7 @@ function ImageSection (props) {
   return (
     <div className={styles.root}>
       <figure className={styles.content}>
+
         <img
           src={builder
             .image(image)
