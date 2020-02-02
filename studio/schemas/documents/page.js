@@ -24,7 +24,8 @@ export default {
         {type: 'mailchimp'},
         {type: 'textSection'},
         {type: 'threeColSection'},
-        {type: 'logoSection'}
+        {type: 'logoSection'},
+        {type: 'twoRowSection'}
       ]
     },
     {

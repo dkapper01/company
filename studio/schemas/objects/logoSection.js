@@ -10,12 +10,11 @@ export default {
     },
     {
       name: 'text',
-      type: 'simplePortableText',
+      type: 'text',
       title: 'Text'
     },
     {
       name: 'logo',
-      // type: 'reference',
       type: 'array',
       title: 'Logo',
       of: [{type: 'image'}]

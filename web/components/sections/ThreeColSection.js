@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import SimpleBlockContent from "../SimpleBlockContent";
-import styles from "../modules/ThreeColSection.module.css";
-import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import React from 'react'
+import PropTypes from 'prop-types'
+import SimpleBlockContent from '../SimpleBlockContent'
+import styles from '../modules/ThreeColSection.module.css'
+import {IoMdCheckmarkCircleOutline} from 'react-icons/io'
+import {Section} from '../../utils'
 
 const ThreeColSection = props => {
   const {
@@ -13,9 +14,9 @@ const ThreeColSection = props => {
     shortDescriptionOne,
     shortDescriptionTwo,
     shortDescriptionThree
-  } = props;
+  } = props
   return (
-    <div className={styles.root}>
+    <Section>
       <div className={styles.content}>
         <h2>{heading && heading}</h2>
         <div className={styles.wrapper}>
@@ -25,7 +26,7 @@ const ThreeColSection = props => {
               <h3 className={styles.title}>{titleOne}</h3>
               {shortDescriptionOne && (
                 <div className={styles.text}>
-                  <SimpleBlockContent blocks={shortDescriptionOne} />{" "}
+                  <SimpleBlockContent blocks={shortDescriptionOne} />{' '}
                 </div>
               )}
             </div>
@@ -36,7 +37,7 @@ const ThreeColSection = props => {
               <h3 className={styles.title}>{titleTwo}</h3>
               {shortDescriptionTwo && (
                 <div className={styles.text}>
-                  <SimpleBlockContent blocks={shortDescriptionTwo} />{" "}
+                  <SimpleBlockContent blocks={shortDescriptionTwo} />{' '}
                 </div>
               )}
             </div>
@@ -47,16 +48,16 @@ const ThreeColSection = props => {
               <h3 className={styles.title}>{titleThree}</h3>
               {shortDescriptionThree && (
                 <div className={styles.text}>
-                  <SimpleBlockContent blocks={shortDescriptionThree} />{" "}
+                  <SimpleBlockContent blocks={shortDescriptionThree} />{' '}
                 </div>
               )}
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    </Section>
+  )
+}
 
 ThreeColSection.propTypes = {
   heading: PropTypes.string,
@@ -66,6 +67,6 @@ ThreeColSection.propTypes = {
   shortDescriptionOne: PropTypes.array,
   shortDescriptionTwo: PropTypes.array,
   shortDescriptionThree: PropTypes.array
-};
+}
 
-export default ThreeColSection;
+export default ThreeColSection

@@ -1,0 +1,25 @@
+@import "../../styles/custom-media.css";
+@import "../../styles/custom-properties.css";
+
+.root {
+  margin: 5rem auto;
+  width: var(--width-medium);
+}
+
+.icon {
+  width: 300px;
+  height: 200px;
+}
+
+.iconWrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.title {}

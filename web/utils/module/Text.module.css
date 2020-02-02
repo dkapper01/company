@@ -1,0 +1,20 @@
+@import "../../styles/custom-media.css";
+@import "../../styles/custom-properties.css";
+
+.title {
+  font-size: var(--font-title2-size); 
+  margin: 0; 
+  color: var(--color-black);
+}
+.heading {
+  font-size: var(--font-title-size); 
+  text-align: center; 
+  color: var(--color-black); 
+}
+.subheading {
+  color: var(--color-gray); 
+  text-align: center; 
+}
+.text {
+  color: var(--color-gray); 
+}

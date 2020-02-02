@@ -17,7 +17,6 @@ function ImageSection (props) {
   return (
     <div className={styles.root}>
       <figure className={styles.content}>
-
         <img
           src={builder
             .image(image)

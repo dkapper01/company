@@ -1,8 +1,8 @@
 import React from 'react'
-import SimpleBlockContent from '../SimpleBlockContent'
 import imageUrlBuilder from '@sanity/image-url'
 import styles from '../modules/LogoSection.module.css'
 import client from '../../client'
+import {Heading, SubHeading, Section} from '../../utils'
 
 const builder = imageUrlBuilder(client)
 
@@ -10,12 +10,12 @@ const LogoSection = props => {
   const {heading, logo, text} = props
   console.log(props)
   return (
-    <div>
-      <h3 className={styles.heading}>{heading}</h3>
+    <Section>
+      <Heading>{heading}</Heading>
       {text && (
-        <div className={styles.text}>
-          <SimpleBlockContent blocks={text} />
-        </div>
+        <SubHeading>
+          {text}
+        </SubHeading>
       )}
       <div className={styles.logoWrapper}>
         {logo.map(item => {
@@ -31,7 +31,7 @@ const LogoSection = props => {
           )
         })}
       </div>
-    </div>
+    </Section>
   )
 }
 
