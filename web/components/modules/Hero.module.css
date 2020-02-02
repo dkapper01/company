@@ -1,7 +1,44 @@
 @import "../../styles/custom-media.css";
 @import "../../styles/custom-properties.css";
 
+.hero {
+  display: flex;
+  width: var(--width-large);
+  /* max-width: var(--media-max-x-large); */
+  margin: 0 auto;
+}
+.leftWrapper {
+  width: 50%;
+  /* border: 1px solid red; */
+}
+.rightWrapper {
+  width: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  align-self: center;
+  width: 600px;
+  height: 500px;
+}
+.title {
+  position: relative;
+  font-weight: 600;
+  font-size: var(--font-title2-size);
+  line-height: var(--font-title2-line-height);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  padding: 0;
+  padding-top: 5.5rem;
 
+  @media (--media-min-medium) {
+    font-size: var(--font-title1-size);
+    line-height: var(--font-title1-line-height);
+    padding-top: 10rem;
+  }
+}
 .root {
   composes: center from "../../styles/shared.module.css";
   position: relative;
@@ -29,28 +66,11 @@
 }
 
 .content {
-  width: 100%;
+  width: 50%;
   max-width: var(--width-large);
   padding: 0 1.5em;
   box-sizing: border-box;
   z-index: 1;
-}
-
-.title {
-  position: relative;
-  font-weight: 600;
-  font-size: var(--font-title2-size);
-  line-height: var(--font-title2-line-height);
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
-  margin: 0;
-  padding: 0;
-  padding-top: 12.5rem;
-
-  @media (--media-min-medium) {
-    font-size: var(--font-title1-size);
-    line-height: var(--font-title1-line-height);
-    padding-top: 15rem;
-  }
 }
 
 .tagline {

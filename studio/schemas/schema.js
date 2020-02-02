@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import page from './documents/page'
 import route from './documents/route'
 import siteConfig from './documents/siteConfig'
+import item from './documents/item'
 
 // Object types
 import cta from './objects/cta'
@@ -45,6 +46,7 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
-    threeColSection
+    threeColSection,
+    item
   ])
 })
