@@ -11,6 +11,9 @@
   --color-very-light-gray: #e7ebed;
   --color-white: #fff;
   --color-accent: #156dff;
+  --color-red: #f45f43; 
+  --color-yellow: #fbc661; 
+  --color-blue: #6c63ff; 
 
   /* Typography */
   --unit: 16;

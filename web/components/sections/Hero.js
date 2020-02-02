@@ -15,16 +15,6 @@ function urlFor (source) {
 function Hero (props) {
   const {heading, backgroundImage, tagline, ctas} = props
 
-  // const style = backgroundImage.asset
-  //   ? {
-  //     backgroundImage: `url("${urlFor(backgroundImage)
-  //       .width(500)
-  //       .auto('format')
-  //       .url()}")`
-  //   }
-  //   : {}
-  // : {backgroundImage: `linear-gradient(to bottom right, #3f51b5, #1a237e)`}
-
   return (
     <div className={styles.hero}>
       <div className={styles.leftWrapper}>
