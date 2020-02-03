@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import SimpleBlockContent from '../SimpleBlockContent'
 import styles from '../modules/ThreeColSection.module.css'
 import {IoMdCheckmarkCircleOutline} from 'react-icons/io'
-import {Section} from '../../utils'
+import {SectionObject} from '../../utils'
 
 const ThreeColSection = props => {
   const {
@@ -16,7 +16,7 @@ const ThreeColSection = props => {
     shortDescriptionThree
   } = props
   return (
-    <Section>
+    <SectionObject>
       <div className={styles.content}>
         <h2>{heading && heading}</h2>
         <div className={styles.wrapper}>
@@ -55,7 +55,7 @@ const ThreeColSection = props => {
           </div>
         </div>
       </div>
-    </Section>
+    </SectionObject>
   )
 }
 

@@ -1,10 +1,4 @@
 import {Title, Heading, SubHeading, Text} from './Text'
-import {Section} from './Section'
+import {Section, SectionObject} from './Section'
 
-export {
-  Section,
-  Title,
-  Heading,
-  SubHeading,
-  Text
-}
+export {Section, SectionObject, Title, Heading, SubHeading, Text}
