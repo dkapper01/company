@@ -1,11 +1,11 @@
-import React from "react";
-import styles from "../modules/TwoRowSection.module.css";
-import imageUrlBuilder from "@sanity/image-url";
-import PropTypes from "prop-types";
-import client from "../../client";
-import { Title, Heading, Text, SubHeading, Section } from "../../utils";
+import React from 'react'
+import styles from '../modules/TwoRowSection.module.css'
+import imageUrlBuilder from '@sanity/image-url'
+import PropTypes from 'prop-types'
+import client from '../../client'
+import {Title, Heading, Text, SubHeading} from '../../utils'
 
-const builder = imageUrlBuilder(client);
+const builder = imageUrlBuilder(client)
 
 const TwoRowSection = props => {
   const {
@@ -23,7 +23,7 @@ const TwoRowSection = props => {
     imageTwo,
     imageThree,
     imageFour
-  } = props;
+  } = props
   return (
     // <Section>
     <div className={styles.root}>
@@ -34,7 +34,7 @@ const TwoRowSection = props => {
           <img
             src={builder
               .image(imageOne)
-              .auto("format")
+              .auto('format')
               .url()}
             className={styles.icon}
           />
@@ -42,23 +42,23 @@ const TwoRowSection = props => {
           <Text>{textOne}</Text>
         </div>
 
-        <Text className={styles.card}>
+        <div className={styles.card}>
           <img
             src={builder
               .image(imageTwo)
-              .auto("format")
+              .auto('format')
               .url()}
             className={styles.icon}
           />
           <Title>{titleTwo}</Title>
           <Text>{textTwo}</Text>
-        </Text>
+        </div>
 
         <div className={styles.card}>
           <img
             src={builder
               .image(imageThree)
-              .auto("format")
+              .auto('format')
               .url()}
             className={styles.icon}
           />
@@ -70,7 +70,7 @@ const TwoRowSection = props => {
           <img
             src={builder
               .image(imageFour)
-              .auto("format")
+              .auto('format')
               .url()}
             className={styles.icon}
           />
@@ -80,8 +80,8 @@ const TwoRowSection = props => {
       </div>
     </div>
     // </Section>
-  );
-};
+  )
+}
 
 TwoRowSection.propTypes = {
   heading: PropTypes.string,
@@ -98,5 +98,5 @@ TwoRowSection.propTypes = {
   imageTwo: PropTypes.object,
   imageThree: PropTypes.object,
   imageFour: PropTypes.object
-};
-export default TwoRowSection;
+}
+export default TwoRowSection
