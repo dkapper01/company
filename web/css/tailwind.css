@@ -3,7 +3,3 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
-
-/* body {
-  @apply bg-blue-500 p-12;
-} */

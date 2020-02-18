@@ -1,4 +1,7 @@
 import {Title, Heading, SubHeading, Text} from './Text'
-import {Section, SectionObject} from './Section'
+import {SectionArray, SectionObject} from './Section'
+import Button from './Button'
+import Card from './Card'
+import SplitSection from './SplitSection'
 
-export {Section, SectionObject, Title, Heading, SubHeading, Text}
+export {SectionArray, SectionObject, Title, Heading, SubHeading, Text, Button, Card, SplitSection}

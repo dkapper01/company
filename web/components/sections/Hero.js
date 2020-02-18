@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import imageUrlBuilder from '@sanity/image-url'
-import styles from '../modules/Hero.module.css'
 import client from '../../client'
 import SimpleBlockContent from '../SimpleBlockContent'
 import Cta from '../Cta'
-
+// import {SectionArray} from '../../utils'
 // const builder = imageUrlBuilder(client)
 
 function urlFor (source) {
@@ -16,22 +15,29 @@ function Hero (props) {
   const {heading, backgroundImage, tagline, ctas} = props
 
   return (
-    <div className={styles.hero}>
-      <div className={styles.leftWrapper}>
-        <h1 className={styles.title}>{heading}</h1>
-        <div className={styles.tagline}>{tagline && <SimpleBlockContent blocks={tagline} />}</div>
-        {ctas && (
-          <div className={styles.ctas}>
-            {ctas.map(cta => (
-              <Cta {...cta} key={cta._key} />
-            ))}
-          </div>
-        )}
+    <section className='pt-20 md:pt-32'>
+      <div className='container mx-auto px-0 sm:px-8 lg:flex'>
+        <div className='text-center lg:text-left lg:w-1/2'>
+          <h1 className='text-4xl lg:text-5xl xl:text-6xl font-bold leading-none'>{heading}</h1>
+          <p className='text-xl lg:text-2xl mt-6 font-light'>
+            {tagline && <SimpleBlockContent blocks={tagline} />}
+          </p>
+          <p className='mt-8 md:mt-12'>
+            {ctas && (
+              <div className=''>
+                {ctas.map(cta => (
+                  <Cta {...cta} key={cta._key} size='lg' />
+                ))}
+              </div>
+            )}
+          </p>
+          {/* <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p> */}
+        </div>
+        <div className='lg:w-1/2'>
+          <img src={urlFor(backgroundImage).url()} />
+        </div>
       </div>
-      <div className={styles.rightWrapper}>
-        <img className={styles.image} src={urlFor(backgroundImage).url()} />
-      </div>
-    </div>
+    </section>
   )
 }
 Hero.propTypes = {
@@ -40,11 +46,5 @@ Hero.propTypes = {
   tagline: PropTypes.array,
   ctas: PropTypes.arrayOf(PropTypes.object)
 }
-// Hero.propTypes = {
-//   heading: PropTypes.string,
-//   backgroundImage: PropTypes.object,
-//   tagline: PropTypes.array,
-//   ctas: PropTypes.arrayOf(PropTypes.object)
-// };
 
 export default Hero

@@ -2,8 +2,8 @@ import React from 'react'
 import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
-import '../styles/shared.module.css'
 import '../styles/layout.css'
+import '../css/tailwind.css'
 
 const siteConfigQuery = `
   *[_id == "global-config"] {

@@ -1,9 +1,9 @@
 import React from 'react'
 import imageUrlBuilder from '@sanity/image-url'
-import styles from '../modules/LogoSection.module.css'
+// import styles from '../modules/LogoSection.module.css'
 import client from '../../client'
 import PropTypes from 'prop-types'
-
+import '../../css/tailwind.css'
 import {Heading, SubHeading, Section} from '../../utils'
 
 const builder = imageUrlBuilder(client)
@@ -11,29 +11,24 @@ const builder = imageUrlBuilder(client)
 const LogoSection = props => {
   const {heading, logo, text} = props
   return (
-    <Section>
+    <div className='container'>
       <Heading>{heading}</Heading>
-      {text && (
-        <SubHeading>
-          {text}
-        </SubHeading>
-      )}
-      <div className={styles.logoWrapper}>
+      {text && <SubHeading>{text}</SubHeading>}
+      <div className='flex justify-center'>
         {logo.map(item => {
           return (
             <img
               key={item._key}
-              className={styles.logo}
+              className='w-56'
               src={builder
                 .image(item)
-                // .auto('format')
                 .width(200)
                 .url()}
             />
           )
         })}
       </div>
-    </Section>
+    </div>
   )
 }
 LogoSection.propTypes = {

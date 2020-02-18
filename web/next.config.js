@@ -35,7 +35,7 @@ const reduceRoutes = (obj, route) => {
 }
 
 module.exports = withCSS({
-  cssModules: true,
+  cssModules: false,
   cssLoaderOptions: {
     importLoaders: 1,
     localIdentName: isProduction ? '[hash:base64:5]' : '[name]__[local]___[hash:base64:5]'

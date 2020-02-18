@@ -2,21 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
-import styles from './Footer.module.css'
+// import styles from './Footer.module.css'
 import SimpleBlockContent from './SimpleBlockContent'
 
 function Footer (props) {
   const {navItems, text, router} = props
   return (
-    <div className={styles.root}>
+    <div className=''>
       <nav>
-        <ul className={styles.items}>
+        <ul className=''>
           {navItems &&
             navItems.map(item => {
               const isActive =
                 router.pathname === '/LandingPage' && router.query.slug === item.slug.current
               return (
-                <li key={item._id} className={styles.item}>
+                <li key={item._id} className=''>
                   <Link
                     href={{
                       pathname: '/LandingPage',
@@ -31,7 +31,7 @@ function Footer (props) {
             })}
         </ul>
       </nav>
-      <div className={styles.text}>
+      <div className=''>
         <SimpleBlockContent blocks={text} />
       </div>
     </div>

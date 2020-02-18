@@ -12,18 +12,18 @@ function getIconComponent (item) {
 
 function StructureMenuWidget (props) {
   return (
-    <div className={styles.root}>
-      <div className={styles.header}>
-        <h3 className={styles.title}>Edit your content</h3>
+    <div className=''>
+      <div className=''>
+        <h3 className=''>Edit your content</h3>
       </div>
 
-      <div className={styles.content}>
+      <div className=''>
         {props.structure.items.map(item => {
           const Icon = getIconComponent(item)
           return (
             <div key={item.id}>
-              <Link className={styles.link} href={`/desk/${item.id}`}>
-                <div className={styles.iconWrapper}>
+              <Link className='' href={`/desk/${item.id}`}>
+                <div className=''>
                   <Icon />
                 </div>
                 <div>{item.title}</div>

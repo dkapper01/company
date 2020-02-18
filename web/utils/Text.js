@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './module/Text.module.css'
+// import styles from './module/Text.module.css'
 import PropTypes from 'prop-types'
 
 const Title = ({children}) => {
   return (
-    <h4 className={styles.title}>
+    <h4 className=''>
       {children}
     </h4>
   )
@@ -15,7 +15,7 @@ Title.propTypes = {
 
 const Heading = ({children}) => {
   return (
-    <h2 className={styles.heading}>
+    <h2 className='text-3xl lg:text-5xl font-semibold text-center'>
       {children}
     </h2>
   )
@@ -25,7 +25,7 @@ Heading.propTypes = {
 }
 const SubHeading = ({children}) => {
   return (
-    <p className={styles.subheading}>
+    <p className='text-base mt-5 font-light text-center'>
       {children}
     </p>
   )
@@ -35,7 +35,7 @@ SubHeading.propTypes = {
 }
 const Text = ({children}) => {
   return (
-    <p className={styles.text}>
+    <p className=''>
       {children}
     </p>
   )

@@ -1,19 +1,26 @@
 import React from 'react'
-import styles from './module/Section.module.css'
 import PropTypes from 'prop-types'
 
-const Section = ({children}) => {
-  return <div className={styles.section}>{children}</div>
+const SectionArray = ({children}) => {
+  return (
+    <div className='py-10 lg:pb-20 lg:pt-20'>
+      <section className='container mx-auto px-5 md:px-20'>{children}</section>
+    </div>
+  )
 }
 
-Section.propTypes = {
+SectionArray.propTypes = {
   children: PropTypes.arrayOf(PropTypes.object)
 }
 
 const SectionObject = ({children}) => {
-  return <div className={styles.section}>{children}</div>
+  return (
+    <div className='py-20 lg:pb-40 lg:pt-48'>
+      <section className='container mx-auto w-9/12'>{children}</section>
+    </div>
+  )
 }
 SectionObject.propTypes = {
   children: PropTypes.object
 }
-export {Section, SectionObject}
+export {SectionArray, SectionObject}

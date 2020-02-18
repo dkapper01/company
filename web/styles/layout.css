@@ -1,4 +1,4 @@
-@import './custom-properties.css';
+/* @import './custom-properties.css';
 
 html {
   font-family: var(--font-family-sans);
@@ -22,4 +22,9 @@ body,
 
 :global(.content) {
   min-height: calc(100% - 84px - 218px);
-}
+} */
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;

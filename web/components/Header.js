@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import {withRouter} from 'next/router'
 import SVG from 'react-inlinesvg'
-import styles from './Header.module.css'
-import HamburgerIcon from './icons/Hamburger'
+import {Button} from '../utils'
+// import HamburgerIcon from './icons/Hamburger'
 
 class Header extends Component {
-  state = {showNav: false}
+  state = {showNav: false};
 
   static propTypes = {
     router: PropTypes.shape({
@@ -32,7 +32,7 @@ class Header extends Component {
       }),
       logo: PropTypes.string
     })
-  }
+  };
 
   componentDidMount () {
     const {router} = this.props
@@ -46,14 +46,14 @@ class Header extends Component {
 
   hideMenu = () => {
     this.setState({showNav: false})
-  }
+  };
 
   handleMenuToggle = () => {
     const {showNav} = this.state
     this.setState({
       showNav: !showNav
     })
-  }
+  };
 
   renderLogo = logo => {
     if (!logo || !logo.asset) {
@@ -61,58 +61,102 @@ class Header extends Component {
     }
 
     if (logo.asset.extension === 'svg') {
-      return <SVG src={logo.asset.url} className={styles.logo} />
+      return <SVG src={logo.asset.url} className='' />
     }
 
-    return <img src={logo.asset.url} alt={logo.title} className={styles.logo} />
-  }
+    return <img src={logo.asset.url} alt={logo.title} className='' />
+  };
 
   render () {
     const {title = 'Missing title', navItems, router, logo} = this.props
-    const {showNav} = this.state
+    // const {showNav} = this.state
 
     return (
-      <div className={styles.root} data-show-nav={showNav}>
-        <h1 className={styles.branding}>
-          <Link
-            href={{
-              pathname: '/LandingPage',
-              query: {
-                slug: '/'
-              }
-            }}
-            as='/'
-          >
-            <a title={title}>{this.renderLogo(logo)}</a>
-          </Link>
-        </h1>
-        <nav className={styles.nav}>
-          <ul className={styles.navItems}>
+      <header className='sticky top-0 bg-white shadow'>
+        <div className='container sm:px-20 flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8'>
+          <div className='flex items-center text-2xl'>
+            <div className='w-12 mr-3'>
+              <Link
+                href={{
+                  pathname: '/LandingPage',
+                  query: {
+                    slug: '/'
+                  }
+                }}
+                as='/'
+              >
+                <a title={title}>{this.renderLogo(logo)}</a>
+              </Link>
+            </div>
+          </div>
+          <div className='flex mt-4 sm:mt-0'>
             {navItems &&
               navItems.map(item => {
                 const {slug, title, _id} = item
                 const isActive =
                   router.pathname === '/LandingPage' && router.query.slug === slug.current
                 return (
-                  <li key={_id} className={styles.navItem}>
-                    <Link
-                      href={{
-                        pathname: '/LandingPage',
-                        query: {slug: slug.current}
-                      }}
-                      as={`/${slug.current}`}
-                    >
-                      <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
-                    </Link>
-                  </li>
+                  <Link
+                    href={{
+                      pathname: '/LandingPage',
+                      query: {slug: slug.current}
+                    }}
+                    as={`/${slug.current}`}
+                  >
+                    <a className='px-4' data-is-active={isActive ? 'true' : 'false'} key={_id}>
+                      {title}
+                    </a>
+                  </Link>
                 )
               })}
-          </ul>
-          <button className={styles.showNavButton} onClick={this.handleMenuToggle}>
-            <HamburgerIcon className={styles.hamburgerIcon} />
-          </button>
-        </nav>
-      </div>
+          </div>
+          <div className='hidden md:block'>
+            <Button className='text-sm'>Start Free Trial</Button>
+          </div>
+        </div>
+      </header>
+
+    // <div className='' data-show-nav={showNav}>
+    //   <h1 className=''>
+    //     <Link
+    //       href={{
+    //         pathname: '/LandingPage',
+    //         query: {
+    //           slug: '/'
+    //         }
+    //       }}
+    //       as='/'
+    //     >
+    //       <a title={title}>{this.renderLogo(logo)}</a>
+    //     </Link>
+    //   </h1>
+    //   <nav className=''>
+    //     <ul className=''>
+    //       {navItems &&
+    //         navItems.map(item => {
+    //           const {slug, title, _id} = item
+    //           const isActive =
+    //             router.pathname === '/LandingPage' && router.query.slug === slug.current
+    //           return (
+    //             <li key={_id} className=''>
+    //               <Link
+    //                 href={{
+    //                   pathname: '/LandingPage',
+    //                   query: {slug: slug.current}
+    //                 }}
+    //                 as={`/${slug.current}`}
+    //               >
+    //                 <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
+    //               </Link>
+    //             </li>
+    //           )
+    //         })}
+    //     </ul>
+    //     <button className='' onClick={this.handleMenuToggle}>
+    //       <HamburgerIcon className='' />
+    //     </button>
+    //   </nav>
+    // </div>
     )
   }
 }
