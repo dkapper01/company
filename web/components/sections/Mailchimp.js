@@ -18,7 +18,7 @@ export default function Mailchimp (props) {
                 name: 'EMAIL',
                 placeholder: 'Email',
                 type: 'email',
-                className: styles.email,
+                // className: styles.email,
                 required: true
               }
             ]}
