@@ -17,7 +17,7 @@
     "@zeit/next-css": "^1.0.1",
     "gatsby-source-medium": "^2.1.19",
     "groq": "^0.140.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "next": "^9.2.1",
     "next-seo": "^1.11.2",
     "react": "^16.12.0",
